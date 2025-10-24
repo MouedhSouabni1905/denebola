@@ -1,9 +1,9 @@
 import Quickshell
 import QtQuick
-import "../themes"
+import qs.themes
 
 Scope {
-        id: root
+        id: barScope
 
         Variants {
                 model: Quickshell.screens
