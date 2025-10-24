@@ -49,4 +49,7 @@ kitty +kitten themes
 dnf copr enable errornointernet/quickshell
 dnf install quickshell
 
+# Installing wallpaper manager
+# swww installed using home manager first
 
+sudo curl -sL $(curl -s https://api.github.com/repos/5hubham5ingh/WallRizz/releases/latest | grep -Po '"browser_download_url": "\K[^"]+' | grep WallRizz) | tar -xz && sudo mv WallRizz /usr/bin/

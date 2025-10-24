@@ -49,6 +49,7 @@
     inkscape
     tree
     pstree
+    swww
 # cybersec / systems related stuff
     wget
     xz
