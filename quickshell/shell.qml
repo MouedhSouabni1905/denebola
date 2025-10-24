@@ -17,9 +17,39 @@ import Quickshell.Services.Pipewire
 import Quickshell.Services.Mpris
 
 ShellRoot {
+  // ==================== BAR SHADOW ====================
+  Loader {
+    sourceComponent: WlrLayershell {
+      id: barShadow
+      margins { 
+        top: 2
+        left: 2
+        right: 2
+        bottom: 2
+      }
+      anchors { top: true; left: true; right:true; }
+      layer: WlrLayer.Bottom
+      height: 30
+      color: "transparent"
+      // ignore this, it just does smth cool
+      Repeater {
+        model: [
+          { size: 0, opacity: 0.3, radius: 8 },
+          { size: 2, opacity: 0.33, radius: 8 },
+          { size: 4, opacity: 0.4, radius: 8 }
+        ]
+        // ===============================       
+        Rectangle {
 
-      TopBar {}
-      VertBar {}
-
-
+          anchors.centerIn: parent
+          width: parent.width
+          height: parent.height
+          opacity: 0.2
+          radius: 10
+        }
+      }
+    }
+  }
+  TopBar {}
+  VertBar {}
 }
