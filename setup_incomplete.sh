@@ -17,12 +17,11 @@ ln -s $HOME/.config/home-manager/home.nix $HOME/.config/sysconfig/desktop/denebo
 # ------------------------------------------------------
 
 # Installing some basic stuff
-yes | dnf install hyprland
-yes | dnf install neovim
-yes | dnf install dolphin
-yes | dnf install ripgrep
-yes | dnf install zsh
+yes | dnf install hyprland neovim dolphin ripgrep zsh go cargo
 yes | dnf remove firefox
+curl https://github.com/omeiirr/quran-cli/blob/main/install.sh | bash
+mkdir $HOME/.quran/
+touch $HOME/.quran/config
 
 # Installing nvchad
 git clone https://github.com/NvChad/starter ~/.config/nvim && nvim

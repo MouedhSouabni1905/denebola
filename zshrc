@@ -77,7 +77,7 @@ alias rice="cd $HOME/.config/sysconfig/desktop/denebola/"
 alias cfg="cd $HOME/.config/sysconfig/"
 
 export BARTIB_FILE=$HOME/.config/sysconfig/desktop/local_data/timetracking
-export PATH=$PATH:$HOME/Scripts/
+export PATH=$PATH:$HOME/Scripts/:$HOME/go/bin
 
 source $ZSH/oh-my-zsh.sh
 
@@ -109,3 +109,5 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+eval quran-cli random
