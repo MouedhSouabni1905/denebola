@@ -48,7 +48,7 @@ Scope {
                         Rectangle {
                                 border {
                                       color: Theme.outerBorders
-                                      width: 2
+                                      width: 1
                                 }
                                 radius: 10
                                 color: Theme.topBarBg

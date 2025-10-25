@@ -32,12 +32,12 @@ Scope {
 
                         Rectangle {
                                 border {
-                                      color: Theme.outerBorders
-                                      width: 2
+                                      color: "red"
+                                      width: 1
                                 }
                                 radius: 10
                                 width: 500
-                                color: Theme.topBarBg
+                                color: "transparent"
                                 anchors.fill: parent
                         }
                 }
