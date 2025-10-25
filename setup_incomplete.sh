@@ -22,6 +22,8 @@ yes | dnf remove firefox
 curl https://github.com/omeiirr/quran-cli/blob/main/install.sh | bash
 mkdir $HOME/.quran/
 touch $HOME/.quran/config
+# Arabiv font to render correctly
+dnf install amiri-fonts
 
 # Installing nvchad
 git clone https://github.com/NvChad/starter ~/.config/nvim && nvim
@@ -52,3 +54,5 @@ dnf install quickshell
 # swww installed using home manager first
 
 sudo curl -sL $(curl -s https://api.github.com/repos/5hubham5ingh/WallRizz/releases/latest | grep -Po '"browser_download_url": "\K[^"]+' | grep WallRizz) | tar -xz && sudo mv WallRizz /usr/bin/
+
+# 

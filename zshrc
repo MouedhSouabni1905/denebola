@@ -109,5 +109,15 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+min=1
+max=114
+surah=$(shuf -i $min-$max -n 1)
+n=$(quran-cli read 114 -a | sed '/^\s*$/d' | wc -l)
+max=$((($n-1)/2)) 
+ayat=$(shuf -i $min-$max -n 1)
 
-eval quran-cli random
+aya=$(quran-cli read $surah $ayat --arabic | head -n3 | tail -n1 | tr ' ' '\n' | tac | tr '\n' ' ')
+header=$(quran-cli read $surah $ayat --arabic | head -n1)
+footer=$(quran-cli read $surah $ayat --arabic | tail -n1)
+
+printf "%s\n\n%s\n\n%s\n" $header $aya $footer
