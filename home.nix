@@ -50,6 +50,7 @@
     tree
     pstree
     swww
+    onefetch
 # cybersec / systems related stuff
     wget
     xz
