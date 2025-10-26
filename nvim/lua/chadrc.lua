@@ -21,7 +21,7 @@ M.ui = {
   --      },
   statusline = {
     theme = "default",
-    separator_style = "arrow",
+    separator_style = "round",
     order = { "mode", "file", "git", "%=", "lsp_msg", "%=", "diagnostics", "lsp", "cwd", "cursor" },
     modules = {
       mode = function()
