@@ -27,12 +27,14 @@ return {
   {
     "benomahony/oil-git.nvim",
     dependencies = { "stevearc/oil.nvim" },
+    lazy = false,
     -- No opts or config needed! Works automatically
   },
   {
     "JezerM/oil-lsp-diagnostics.nvim",
     dependencies = { "stevearc/oil.nvim" },
     opts = {},
+    lazy = false,
   },
   {
     "neovim/nvim-lspconfig",

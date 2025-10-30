@@ -21,6 +21,7 @@
   ];
   # The home.packages option allows you to install Nix packages into your
   # environment.
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
   home.packages = with pkgs; [
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
@@ -102,7 +103,6 @@
     asciidoc
     ascii
     ntfy-sh
-    bartib
 # shell-related
     zellij
     btop

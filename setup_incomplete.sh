@@ -58,3 +58,5 @@ sudo curl -sL $(curl -s https://api.github.com/repos/5hubham5ingh/WallRizz/relea
 # Installing kanban board program
 pip install rich
 pip install kanban-cli
+
+pip install termdown
