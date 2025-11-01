@@ -102,7 +102,6 @@
     d2
     asciidoc
     ascii
-    ntfy-sh
 # shell-related
     zellij
     btop
