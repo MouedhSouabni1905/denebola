@@ -107,12 +107,18 @@
     btop
     fzf
     bat
-    projectable
-
+    ranger
   ];
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
 
-  
+programs = {
+    direnv = {
+      enable = true;
+      enableZshIntegration = true; # see note on other shells below
+      nix-direnv.enable = true;
+    };
+};
+
 programs.zellij.enable = true;
 programs.zellij.settings.theme = "ao";
 programs.zellij.settings.enableZshIntegration = true;

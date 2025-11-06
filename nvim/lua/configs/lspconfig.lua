@@ -15,6 +15,7 @@ local servers = {
   "stylua",
   "typescript-language-server",
   "vim-language-server",
+  "semgrep",
 }
 vim.lsp.enable(servers)
 

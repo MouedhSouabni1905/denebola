@@ -77,7 +77,7 @@ alias rice="cd $HOME/.config/sysconfig/desktop/denebola/"
 alias cfg="cd $HOME/.config/sysconfig/"
 
 export BARTIB_FILE=$HOME/.config/sysconfig/desktop/local_data/timetracking
-export PATH=$PATH:$HOME/Scripts/:$HOME/go/bin
+export PATH=$PATH:$HOME/Scripts/:$HOME/go/bin:$HOME/.local/bin
 
 source $ZSH/oh-my-zsh.sh
 
@@ -109,6 +109,9 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+eval "$(direnv hook zsh)"
+
 min=1
 max=114
 surah=$(shuf -i $min-$max -n 1)

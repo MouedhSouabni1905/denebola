@@ -17,7 +17,7 @@ ln -s $HOME/.config/home-manager/home.nix $HOME/.config/sysconfig/desktop/denebo
 # ------------------------------------------------------
 
 # Installing some basic stuff
-yes | dnf install hyprland neovim dolphin ripgrep zsh go cargo pip st
+yes | dnf install hyprland neovim dolphin ripgrep zsh go cargo pip st docker docker-compose
 yes | dnf remove firefox
 curl https://github.com/omeiirr/quran-cli/blob/main/install.sh | bash
 mkdir $HOME/.quran/
@@ -63,6 +63,8 @@ pip install kanban-cli
 pip install termdown
 
 # Time management
-dnf install remind
 go install -ldflags "-X github.com/wakatara/harsh/cmd.version=$(git describe --tags --always --dirty)" github.com/wakatara/harsh@latest
 dnf install calcurse
+
+# Direnv installation
+curl -sfL https://direnv.net/install.sh | bash
