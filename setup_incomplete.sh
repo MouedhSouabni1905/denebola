@@ -17,7 +17,7 @@ ln -s $HOME/.config/home-manager/home.nix $HOME/.config/sysconfig/desktop/denebo
 # ------------------------------------------------------
 
 # Installing some basic stuff
-yes | dnf install hyprland neovim dolphin ripgrep zsh go cargo pip st docker docker-compose salt salt-ssh salt-master
+yes | dnf install hyprland neovim dolphin ripgrep zsh go cargo pip st docker docker-compose
 yes | dnf remove firefox
 curl https://github.com/omeiirr/quran-cli/blob/main/install.sh | bash
 mkdir $HOME/.quran/
@@ -68,3 +68,8 @@ dnf install calcurse
 
 # Direnv installation
 curl -sfL https://direnv.net/install.sh | bash
+
+# Salt installation
+curl -fsSL https://github.com/saltstack/salt-install-guide/releases/latest/download/salt.repo | tee /etc/yum.repos.d/salt.repo
+dnf clean expire-cache
+yes | dnf install salt-master salt-minion salt-ssh salt-syndic salt-cloud salt-api
