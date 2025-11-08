@@ -35,6 +35,62 @@ Scope {
                                       color: "red"
                                       width: 1
                                 }
+                                // remove this later ======================
+
+                                Column {
+                                  anchors.horizontalCenter: parent.horizontalCenter
+                                  anchors.verticalCenter: parent.verticalCenter
+                                  spacing: 10
+                                  Text {
+                                    text: "Sidebar"
+                                    anchors.horizontalCenter: parent.horizontalCenter
+                                    font.italic: true     
+                                    color: "red"
+                                    font.pixelSize: 10
+                                    font.bold: true
+                                  }
+                                  Text {
+                                    text: "is left"
+                                    anchors.horizontalCenter: parent.horizontalCenter
+                                    font.italic: true     
+                                    color: "red"
+                                    font.pixelSize: 10
+                                    font.bold: true
+                                  }
+                                  Text {
+                                    text: "as an"
+                                    anchors.horizontalCenter: parent.horizontalCenter
+                                    font.italic: true     
+                                    color: "red"
+                                    font.pixelSize: 10
+                                    font.bold: true
+                                  }
+                                  Text {
+                                    text: "exercise"
+                                    anchors.horizontalCenter: parent.horizontalCenter
+                                    font.italic: true     
+                                    color: "red"
+                                    font.pixelSize: 10
+                                    font.bold: true
+                                  }
+                                  Text {
+                                    text: "for the"
+                                    anchors.horizontalCenter: parent.horizontalCenter
+                                    font.italic: true     
+                                    color: "red"
+                                    font.pixelSize: 10
+                                    font.bold: true
+                                  }
+                                  Text {
+                                    text: "student"
+                                    anchors.horizontalCenter: parent.horizontalCenter
+                                    font.italic: true     
+                                    color: "red"
+                                    font.pixelSize: 10
+                                    font.bold: true
+                                  }
+                                }
+                                // =============================
                                 radius: 10
                                 width: 500
                                 color: "transparent"
