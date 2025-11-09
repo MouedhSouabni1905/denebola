@@ -13,17 +13,16 @@ nix-channel --update
 
 nix-shell '<home-manager>' -A install
 
-ln -s $HOME/.config/home-manager/home.nix $HOME/.config/sysconfig/desktop/denebola/nix/home.nix
+cp $HOME/Configuration/denebola/home.nix $HOME/.config/home-manager && echo "[Done] Copied home.nix to home-manager config"
+
 # ------------------------------------------------------
 
 # Installing some basic stuff
-yes | dnf install hyprland neovim dolphin ripgrep zsh go cargo pip st docker docker-compose
+yes | dnf install hyprland vim neovim dolphin ripgrep zsh go cargo pip st docker docker-compose
 yes | dnf remove firefox
 curl https://github.com/omeiirr/quran-cli/blob/main/install.sh | bash
 mkdir $HOME/.quran/
-touch $HOME/.quran/config
-# Arabiv font to render correctly
-dnf install amiri-fonts
+touch $HOME/.quran/config && echo "[Done] Installed quran-cli"
 
 # Installing nvchad
 git clone https://github.com/NvChad/starter ~/.config/nvim && nvim
@@ -32,44 +31,41 @@ rm .git
 rm LICENSE
 rm README.md
 
+cp -r $HOME/Configuration/denebola/nvim $HOME/.config/ && echo "[Done] Copied nvim config"
+
 # Initializing hyprland config
-cp $HOME/.config/sysconfig/desktop/denebola/hyprland.conf $HOME/.config/hypr/
+cp $HOME/Configuration/denebola/hyprland.conf $HOME/.config/hypr/
 
 # Initializing zsh and omz config
-chsh -s $(which zsh)
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
 git clone https://github.com/zdharma-continuum/fast-syntax-highlighting.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting
-cp $HOME/.config/sysconfig/desktop/denebola/zshrc $HOME/.zshrc
+cp $HOME/Configuration/denebola/zshrc $HOME/.zshrc && echo "[Done] Copied zshrc file to homedir"
+chsh $(which zsh)
+cp $HOME/Configuration/denebola/half-life-mod.zsh-theme $HOME/.oh-my-zsh/themes
 
-# Choosing kitty theme
-kitty +kitten themes
+# Initializing kitty
+cp -r $HOME/Configuration/denebola/kitty $HOME/.config && echo "[Done] Copied kitty config"
 
 # Installing and configuring quickshell
 dnf copr enable errornointernet/quickshell
-dnf install quickshell
+dnf install quickshell && echo "[Done] Installed quickshell (note: hyprland is configured to open the quickshell at boot)"
 
-# Installing wallpaper manager
 # swww installed using home manager first
-
-sudo curl -sL $(curl -s https://api.github.com/repos/5hubham5ingh/WallRizz/releases/latest | grep -Po '"browser_download_url": "\K[^"]+' | grep WallRizz) | tar -xz && sudo mv WallRizz /usr/bin/
+echo "[info] swww is installed through home-manager and launched at boot through hyprland"
 
 # Installing kanban board program
 pip install rich
-pip install kanban-cli
+pip install kanban-cli && echo "[Done] Installed kanban-cli"
 
 # Installing timer
-pip install termdown
-
-# Time management
-go install -ldflags "-X github.com/wakatara/harsh/cmd.version=$(git describe --tags --always --dirty)" github.com/wakatara/harsh@latest
-dnf install calcurse
+pip install termdown && echo "[Done] Installed termdown"
 
 # Direnv installation
-curl -sfL https://direnv.net/install.sh | bash
+curl -sfL https://direnv.net/install.sh | bash && echo "[Done] Installed direnv (note: nix-direnv is installed through home manager)"
 
 # Salt installation
 curl -fsSL https://github.com/saltstack/salt-install-guide/releases/latest/download/salt.repo | tee /etc/yum.repos.d/salt.repo
 dnf clean expire-cache
-yes | dnf install salt-master salt-minion salt-ssh salt-syndic salt-cloud salt-api
+yes | dnf install salt-master salt-minion salt-ssh salt-syndic salt-cloud salt-api && echo "[Done] Installed Saltstack"
