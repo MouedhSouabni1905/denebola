@@ -62,7 +62,6 @@
     unixtools.arp
     dig
     ubootTools
-    rpi-imager
     shellcheck
     libisoburn
     openssl

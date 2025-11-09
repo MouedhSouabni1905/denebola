@@ -3,7 +3,7 @@
 # If you don't trust the script to do everything for you,        #
 # you can use it as a TOME playbook to quickly set everything up.#
 ##################################################################
-
+setenforce Permissive
 # Setting up nix home manager --------------------------
 sh <(curl --proto '=https' --tlsv1.2 -L https://nixos.org/nix/install) --daemon
 
@@ -14,6 +14,8 @@ nix-channel --update
 nix-shell '<home-manager>' -A install
 
 cp $HOME/Configuration/denebola/home.nix $HOME/.config/home-manager && echo "[Done] Copied home.nix to home-manager config"
+
+home-manager switch
 
 # ------------------------------------------------------
 

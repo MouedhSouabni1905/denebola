@@ -73,8 +73,7 @@ ZSH_THEME="half-life-mod"
 plugins=(git colored-man-pages copybuffer copyfile extract jsontools safe-paste sudo zsh-autosuggestions zsh-syntax-highlighting fast-syntax-highlighting)
 
 alias z="zellij"
-alias rice="cd $HOME/.config/sysconfig/desktop/denebola/"
-alias cfg="cd $HOME/.config/sysconfig/"
+alias rice="cd $HOME/Configuration/denebola/"
 
 export BARTIB_FILE=$HOME/.config/sysconfig/desktop/local_data/timetracking
 export PATH=$PATH:$HOME/Scripts/:$HOME/go/bin:$HOME/.local/bin
@@ -111,16 +110,16 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 eval "$(direnv hook zsh)"
-
-min=1
-max=114
-surah=$(shuf -i $min-$max -n 1)
-n=$(quran-cli read 114 -a | sed '/^\s*$/d' | wc -l)
-max=$((($n-1)/2)) 
-ayat=$(shuf -i $min-$max -n 1)
-
-aya=$(quran-cli read $surah $ayat --arabic | head -n3 | tail -n1 | tr ' ' '\n' | tac | tr '\n' ' ')
-header=$(quran-cli read $surah $ayat --arabic | head -n1)
-footer=$(quran-cli read $surah $ayat --arabic | tail -n1)
-
-printf "%s\n\n%s\n\n%s\n" $header $aya $footer
+#
+# min=1
+# max=114
+# surah=$(shuf -i $min-$max -n 1)
+# n=$(quran-cli read 114 -a | sed '/^\s*$/d' | wc -l)
+# max=$((($n-1)/2)) 
+# ayat=$(shuf -i $min-$max -n 1)
+#
+# aya=$(quran-cli read $surah $ayat --arabic | head -n3 | tail -n1 | tr ' ' '\n' | tac | tr '\n' ' ')
+# header=$(quran-cli read $surah $ayat --arabic | head -n1)
+# footer=$(quran-cli read $surah $ayat --arabic | tail -n1)
+#
+# printf "%s\n\n%s\n\n%s\n" $header $aya $footer

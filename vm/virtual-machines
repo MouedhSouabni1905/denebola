@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+machine=$(find ~ | grep $(ls ~/Virtual | grep .qcow2 | wofi -d) 2> /dev/null )
+if [[ $machine == "" ]]; then
+  echo "Operation cancelled"
+  exit 0
+fi
+
+~/Virtual/run.sh "$machine"
