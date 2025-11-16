@@ -3,19 +3,19 @@ require("nvchad.configs.lspconfig").defaults()
 local servers = {
   "html",
   "cssls",
-  "clangd",
+  "checkmake",
+  "codelldb",
   "intelephense",
   "python-lsp-server",
+  "yamlls",
+  "nixd",
   "qmlls",
   "remark-language-server",
-  "nil",
-  "alejandra",
+  "dockerfile-language-server",
   "rubocop",
-  "spectral-language-server",
   "stylua",
   "typescript-language-server",
   "vim-language-server",
-  "semgrep",
 }
 vim.lsp.enable(servers)
 
